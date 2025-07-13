@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Training & Services Firm</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h3 {
+      color: #004080;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-bottom: 3px solid #004080;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+
+    .services {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .service-card {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 30%;
+      min-width: 280px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card h4 {
+      margin-bottom: 15px;
+      color: #0073e6;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .about {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ProTrain Solutions</h1>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Empowering Your Workforce</h2>
+  <p>Professional training and consulting services to elevate your business performance.</p>
+</section>
+
+<main>
+  <section id="services">
+    <h3>Our Services</h3>
+    <div class="services">
+      <div class="service-card">
+        <h4>Corporate Training</h4>
+        <p>Customized training programs designed to enhance employee skills and productivity.</p>
+      </div>
+      <div class="service-card">
+        <h4>Consulting Services</h4>
+        <p>Expert advice and strategies to improve your business processes and outcomes.</p>
+      </div>
+      <div class="service-card">
+        <h4>Online Workshops</h4>
+        <p>Interactive virtual sessions covering the latest industry trends and best practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h3>About Us</h3>
+    <p>ProTrain Solutions has over 10 years of experience delivering high-quality training and consulting services across multiple industries. Our mission is to empower organizations with the knowledge and tools they need to succeed in a competitive market.</p>
+  </section>
+</main>
+
+<footer id="contact">
+  <p>Contact us: info@protrain.com | +1 (555) 123-4567</p>
+  <p>&copy; 2025 ProTrain Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
