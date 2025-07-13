@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Solutions Inc.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --accent: #f97316;
+            --light: #f8fafc;
+            --dark: #1e293b;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: transparent;
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            padding: 2rem 0;
+        }
+        
+        .template-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            background: white;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .template-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), #1d4ed8);
+            color: white;
+        }
+        
+        .template-body {
+            padding: 2rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+        
+        .badge-custom {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .template-1 {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .template-2 {
+            border-top: 5px solid #8b5cf6;
+        }
+        
+        .template-3 {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .tech-badge {
+            background: #e2e8f0;
+            color: #475569;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .preview-container {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border: 1px solid #e2e8f0;
+            height: 300px;
+            overflow-y: auto;
+        }
+        
+        .template-3 .preview-container {
+            background: #0f172a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="fw-bold">TrainingSolutions</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Transform Your Team with Expert Training</h1>
+                    <p class="lead mb-4">We provide cutting-edge corporate training solutions tailored to your business needs and objectives.</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-primary btn-lg px-4 py-3">Explore Courses</a>
+                        <a href="#" class="btn btn-outline-dark btn-lg px-4 py-3">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600" alt="Corporate Training" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Template Showcase -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Website Template Designs</h2>
+                <p class="lead text-muted">Choose from our professionally designed templates for your training business</p>
+            </div>
+            
+            <!-- Template Tabs -->
+            <ul class="nav nav-tabs justify-content-center mb-4" id="templateTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="template1-tab" data-bs-toggle="tab" data-bs-target="#template1" type="button" role="tab">Corporate Professional</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="template2-tab" data-bs-toggle="tab" data-bs-target="#template2" type="button" role="tab">Modern Learning</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="template3-tab" data-bs-toggle="tab" data-bs-target="#template3" type="button" role="tab">Minimalist Academy</button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="templateTabsContent">
+                <!-- Template 1: Corporate Professional -->
+                <div class="tab-pane fade show active" id="template1" role="tabpanel" aria-labelledby="template1-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="template-card template-1">
+                                <div class="template-header">
+                                    <h3 class="fw-bold">Corporate Professional</h3>
+                                    <p class="mb-0">Bootstrap-based design</p>
+                                </div>
+                                <div class="template-body">
+                                    <p class="mb-4">A sophisticated template designed for established training providers targeting corporate clients. Features a professional color scheme and structured layout.</p>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Key Features:</h5>
+                                        <ul>
+                                            <li>Professional corporate aesthetic</li>
+                                            <li>Emphasis on credentials and testimonials</li>
+                                            <li>Detailed service descriptions</li>
+                                            <li>Team member showcase</li>
+                                            <li>Client success stories</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Color Scheme:</h5>
+                                        <span class="color-swatch" style="background-color: #2563eb;" title="Primary"></span>
+                                        <span class="color-swatch" style="background-color: #0f172a;" title="Secondary"></span>
+                                        <span class="color-swatch" style="background-color: #64748b;" title="Accent"></span>
+                                        <span class="color-swatch" style="background-color: #f1f5f9;" title="Light"></span>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Technology:</h5>
+                                        <span class="tech-badge">Bootstrap 5</span>
+                                        <span class="tech-badge">Font Awesome</span>
+                                        <span class="tech-badge">jQuery</span>
+                                    </div>
+                                    
+                                    <a href="#" class="btn btn-primary w-100 py-2">Preview Template</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="preview-container">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-briefcase fa-lg"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Corporate Training Programs</h4>
+                                        <p class="text-muted mb-0">Tailored solutions for your organization</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-4">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card h-100 border-0 shadow-sm">
+                                            <div class="card-body">
+                                                <div class="feature-icon mb-3">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <h5>Leadership Development</h5>
+                                                <p class="text-muted">Build strong leaders at all levels of your organization.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card h-100 border-0 shadow-sm">
+                                            <div class="card-body">
+                                                <div class="feature-icon mb-3">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                                <h5>Sales Training</h5>
+                                                <p class="text-muted">Transform your sales team into high performers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-light p-4 rounded">
+                                    <div class="d-flex">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100" alt="Testimonial" class="rounded-circle me-3" style="width: 60px; height: 60px;">
+                                        <div>
+                                            <p class="mb-1 fst-italic">"The training program transformed our customer service approach. Highly recommended!"</p>
+                                            <p class="mb-0 fw-bold">Sarah Johnson, COO</p>
+                                            <p class="text-muted small mb-0">Tech Innovations Inc.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Template 2: Modern Learning -->
+                <div class="tab-pane fade" id="template2" role="tabpanel" aria-labelledby="template2-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="template-card template-2">
+                                <div class="template-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                                    <h3 class="fw-bold">Modern Learning</h3>
+                                    <p class="mb-0">Bootstrap-based design</p>
+                                </div>
+                                <div class="template-body">
+                                    <p class="mb-4">A contemporary template focused on digital learning experiences. Features interactive elements and a vibrant color palette.</p>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Key Features:</h5>
+                                        <ul>
+                                            <li>Modern, engaging interface</li>
+                                            <li>Interactive course displays</li>
+                                            <li>Learning path visualizations</li>
+                                            <li>Student progress tracking</li>
+                                            <li>Digital resource library</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Color Scheme:</h5>
+                                        <span class="color-swatch" style="background-color: #8b5cf6;" title="Primary"></span>
+                                        <span class="color-swatch" style="background-color: #0ea5e9;" title="Secondary"></span>
+                                        <span class="color-swatch" style="background-color: #ec4899;" title="Accent"></span>
+                                        <span class="color-swatch" style="background-color: #f8fafc;" title="Light"></span>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Technology:</h5>
+                                        <span class="tech-badge">Bootstrap 5</span>
+                                        <span class="tech-badge">Font Awesome</span>
+                                        <span class="tech-badge">GSAP Animations</span>
+                                    </div>
+                                    
+                                    <a href="#" class="btn w-100 py-2" style="background-color: #8b5cf6; color: white;">Preview Template</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="preview-container">
+                                <div class="text-center mb-4">
+                                    <h3 class="fw-bold" style="color: #8b5cf6;">Popular Courses</h3>
+                                    <p class="text-muted">Transform your career with our expert-led programs</p>
+                                </div>
+                                
+                                <div class="card border-0 shadow-sm mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 bg-primary d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                                            <i class="fas fa-laptop-code fa-2x text-white"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Digital Marketing Mastery</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i> 8 Weeks</span>
+                                                        <span class="badge bg-light text-dark"><i class="fas fa-user-graduate me-1"></i> Advanced</span>
+                                                    </div>
+                                                    <span class="fw-bold" style="color: #8b5cf6;">$499</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card border-0 shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 bg-info d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+                                            <i class="fas fa-chart-pie fa-2x text-white"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Data Analytics Bootcamp</h5>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i> 12 Weeks</span>
+                                                        <span class="badge bg-light text-dark"><i class="fas fa-user-graduate me-1"></i> Intermediate</span>
+                                                    </div>
+                                                    <span class="fw-bold" style="color: #0ea5e9;">$799</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-3 text-center">
+                                    <button class="btn btn-sm" style="background-color: #8b5cf6; color: white;">View All Courses</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Template 3: Minimalist Academy -->
+                <div class="tab-pane fade" id="template3" role="tabpanel" aria-labelledby="template3-tab">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="template-card template-3">
+                                <div class="template-header" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+                                    <h3 class="fw-bold">Minimalist Academy</h3>
+                                    <p class="mb-0">Tailwind CSS-based design</p>
+                                </div>
+                                <div class="template-body">
+                                    <p class="mb-4">A clean, minimalist template built with Tailwind CSS. Focuses on content and learning experience with ample whitespace.</p>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Key Features:</h5>
+                                        <ul>
+                                            <li>Clean, distraction-free interface</li>
+                                            <li>Focus on typography and content</li>
+                                            <li>Responsive design with Tailwind</li>
+                                            <li>Simple navigation</li>
+                                            <li>Dark mode support</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Color Scheme:</h5>
+                                        <span class="color-swatch" style="background-color: #0f172a;" title="Primary"></span>
+                                        <span class="color-swatch" style="background-color: #f97316;" title="Accent"></span>
+                                        <span class="color-swatch" style="background-color: #64748b;" title="Secondary"></span>
+                                        <span class="color-swatch" style="background-color: #ffffff;" title="Light"></span>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h5>Technology:</h5>
+                                        <span class="tech-badge">Tailwind CSS</span>
+                                        <span class="tech-badge">Alpine.js</span>
+                                        <span class="tech-badge">Vite</span>
+                                    </div>
+                                    
+                                    <a href="#" class="btn w-100 py-2" style="background-color: #f97316; color: white;">Preview Template</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="preview-container">
+                                <div class="mb-5">
+                                    <h2 class="fw-bold mb-1" style="color: #f97316;">Learn. Grow. Succeed.</h2>
+                                    <p class="text-muted">Premium training programs for professionals</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="fw-bold">Leadership Development</span>
+                                        <span>82% Completed</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px; background-color: #334155;">
+                                        <div class="progress-bar" style="background-color: #f97316; width: 82%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="fw-bold">Data Analytics</span>
+                                        <span>45% Completed</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px; background-color: #334155;">
+                                        <div class="progress-bar" style="background-color: #f97316; width: 45%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="fw-bold">Project Management</span>
+                                        <span>67% Completed</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px; background-color: #334155;">
+                                        <div class="progress-bar" style="background-color: #f97316; width: 67%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 pt-3 border-top border-gray-700">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-orange-500 rounded-full p-2 me-3">
+                                            <i class="fas fa-certificate fa-lg"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-0">Earn Certification</h5>
+                                            <p class="text-muted mb-0">Complete courses to earn professional certificates</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose Our Training Solutions</h2>
+                <p class="lead text-muted">We provide exceptional learning experiences that drive results</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4 class="card-title">Industry Experts</h4>
+                            <p class="card-text">Learn from professionals with real-world experience in their fields.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h4 class="card-title">Flexible Learning</h4>
+                            <p class="card-text">Online, in-person, or blended learning options to fit your schedule.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4 class="card-title">Career Advancement</h4>
+                            <p class="card-text">Programs designed to enhance your skills and boost your career.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="fw-bold mb-3">TrainingSolutions</h4>
+                    <p>Providing exceptional training and development programs since 2010. Transforming individuals and organizations through innovative learning experiences.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Our Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Training Programs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Corporate Training</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p>Subscribe to receive updates on new courses and training opportunities.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="mt-5 mb-4">
+            
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 TrainingSolutions Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
